@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous|Satisfy|Ubuntu');
+
+body{font-size: 1.5em;font-family: 'Ubuntu';background-color:#f8f8f8}
+h1, h3{font-family: 'Satisfy', cursive;}
+footer {margin-top:150px;background-color: black; padding: 20px;}
+.btn {font-weight: bold;font-size:1.3em;}
+.errDisplay{color:red;display:block;height:20px;}
+
+.spacing{display: block;height:70px;}
+
+/* navbar */
+.navbar {border-bottom:1px; border-bottom-width:1px; border-bottom-color:#cccccc;border-style: solid;}
+.navbar a{color:black;font-weight:bold;}
+.navbar a:hover{color:brown;}
+.navbar-header button span{background-color:black;}
+.navbar .active a,.navbar .active a:hover{color:black;text-decoration: underline;}
+.navbar-nav span{margin-right:5px;}
+.dropdown-menu>li>a{font-size: 1.1em;}
+
+/* The fade in animation for navbar*/
+@keyframes fadein {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+/* navbar sticky top*/
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+    -webkit-transition:all .9s ease-in-out;
+    transition: all .9s ease-in-out;
+}
+.affix + .container-fluid {padding-top: 70px;}
+.affix-top {position: static;top: -50px; animation-name: fadein; animation-duration: 1.3s;}
+ 
+ 
+/* navbar brand*/
+.navbar .navbar-brand{font-size:20px;background:black;color:white;font-family: 'Satisfy', cursive;padding-right: 20px;}
+.navbar .navbar-brand span{font-family: 'Righteous', cursive;vertical-align:bottom;}
+.navbar .navbar-brand:hover{background:black;color:white;}
+.navbar {font-family:'Ubuntu', sans-serif;font-size: 16px;background:white;}
+
+.navbar .navbar-username{background: brown;}
+.navbar .navbar-role{background: orange;font-size: 1em;font-family: 'Ubuntu';}
+
+/* The ABC font color animation*/
+@keyframes text-ABC {
+    from {color:yellow;}
+    to {color:red;}
+}
+
+/* page header*/
+.page-header{font-family: 'Righteous', cursive;color:brown;}
+.content-header>h1{font-size:6.0em; margin-top:30px;color:red; animation-name:text-ABC; animation-duration:8s;}
+.content-header>h1>span{color:black;font-weight: bold;font-size:0.3em;}
+.content-header>h2{font-size:1.5em; margin-bottom:70px;color:#555555;}
+
+@keyframes homebox{
+    from {background-color:navy;}
+    to {background-color:black;}
+}
+
+
+/* homepage */
+.about-text{margin-bottom:30px;}
+
+.homebox-btn{width:100%;}
+.homebox-text{margin-top:40px;font-weight: bold;color:white;font-size:1.3em;}
+.homebox-style{background-color:black; padding:33px;animation-name:homebox; animation-duration:5s;}
+.homebox-style>h3{margin-top:0px;color:white;}
+.homebox-style>div>p{margin-top:0px;color:#aaaaaa;}
+
+/* The white to black animation*/
+@keyframes formcolor {
+    from {background-color:#f2f2f2;}
+    to {background-color:white;}
+}
+
+/*form*/
+.form-base{
+    background-color:#ffffff;
+    border: solid 1px #cccccc; 
+    border-radius: 3px; 
+    padding: 20px 50px 50px 50px; 
+    box-shadow: 2px 2px 1px #eeeeee;
+    animation-name: formcolor; animation-duration: 2s;
+}
+
+@keyframes tablecolor {
+    from {background-color:grey;}
+    to {background-color:#efefef;}
+}
+
+/*tables*/
+.table-wrapper{
+    background-color: #efefef;
+    box-shadow: 2px 2px 1px #dddddd;
+    margin-top:20px;
+    animation-name: tablecolor; animation-duration: 2s;
+}
+.table-wrapper a{font-size: 1.2em;}
+
+/*registration button*/
+.btn-reg{width:80%;margin:30px 0px;}
+
+/*login & password reset page*/
+.btn-login, .btn-passwordreset{width:100%;margin:30px 0px;}
+
+/*Thank you page - login prompt*/
+.login-prompt {margin-top:20px; background-color:white;padding:40px; animation-name: fadein; animation-duration: 8s;}
+.login-prompt>h2 {font-weight:bolder;}
+.login-prompt button{margin-top:30px;width:30%;}
+
+/*log out page*/
+.logout-style>div>.btn{margin-top: 20px;width:40%;}
+
+/*search panel*/
+.form-inline .form-control{width:100%;}
+.search-style{background-color: #dfdfdf;box-shadow: 2px 2px 1px #cccccc;}
+.search-style-btn{font-size: 1.0em;width: 100%;}
+
+/*view profile page*/
+.viewProfile-wrapper{box-shadow:2px 2px 1px #888888;font-weight: bold;}
+.viewProfile-header-name{color:brown;font-size: 1.3em;font-family: 'Satisfy', cursive;}
+.viewProfile-label{color:navy;}
+.viewProfile-label>span{margin: 0px 8px;}
+.table-wrapper .btn-op{width:70px; font-size: 0.9em;}
+
+/*contact page*/
+.contact-details>h4{font-weight: bolder;}
+.contact-details>div>iframe{border: solid 2px black;}
+
+/*landing page*/
+#first, #second, .home-side-item{display: none;}
+#second{color:brown;font-weight: bold;font-size: 2.5em;margin:50px 0px;}
+#second:hover{color:orange;}
+.home-side{list-style:none;padding:0px;}
+.home-side ul{margin-left:0px;}
+.home-side-item{vertical-align: middle;font-weight: bold;height:80px;background-color:#777777;margin:10px; padding:20px;border-radius: 3px;color:white;font-size: 1.2em;}
+.home-side-item:hover{background-color:#bbbbbb;color:black;}
+.accessdate {margin:20px 10px 0px 0px;font-style: italic;}
+
+@media screen and (max-width: 768px) {
+    /*remove spacing*/
+    .spacing{display:none;}
+
+    /*form button 100% width*/
+    .btn-reg {width:100%;margin:15px 0px;}
+    
+    /*landing page*/
+    #first, #second, .home-side-item{display: block;}
+    #second{font-size:2.2em;margin:20px 0px;}
+    
+    /*log out page*/
+    .logout-style>div>.btn{width:50%;}
+}

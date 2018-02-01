@@ -11,9 +11,21 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'IndexController@index');
 
 Route::get('home', 'HomeController@index');
+
+Route::get('registration', function(){
+    echo 'registration page';
+});
+
+Route::get('login', function(){
+    echo 'login page';
+});
+
+Route::get('contact', function(){
+    echo 'contact page';
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
