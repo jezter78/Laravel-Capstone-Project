@@ -14,9 +14,12 @@ class FeedbackController extends Controller {
 	 */
 	public function index()
 	{
-		//
+            return view('pages/contact');
 	}
 
+        public function submit(){
+            echo 'contact page';
+        }
 	/**
 	 * Show the form for creating a new resource.
 	 *

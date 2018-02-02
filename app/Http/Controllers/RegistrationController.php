@@ -14,7 +14,7 @@ class RegistrationController extends Controller {
 	 */
 	public function index()
 	{
-		//
+            return view('auth/registration');
 	}
 
 	/**
@@ -24,7 +24,7 @@ class RegistrationController extends Controller {
 	 */
 	public function create()
 	{
-		//
+            echo 'registered';
 	}
 
 	/**

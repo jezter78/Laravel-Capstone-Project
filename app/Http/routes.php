@@ -15,29 +15,17 @@ Route::get('/', 'IndexController@index');
 
 //Route::get('home', 'HomeController@index');
 
-Route::get('registration', function(){
-    return view('auth/registration');
-});
+//User Registration
+Route::get('registration','RegistrationController@index');
+Route::post('registration','RegistrationController@create');
 
-Route::post('registration', function(){
-    echo 'registered';
-});
+//User Login
+Route::get('login','LoginController@index');
+Route::post('login', 'LoginController@login');
 
-Route::get('login', function(){
-    return view('auth/login');
-});
-
-Route::post('login', function(){
-    echo "login";
-});
-
-Route::get('contact', function(){
-    return view('pages/contact');
-});
-
-Route::post('contact', function(){
-    echo 'contact page';
-});
+//Feedback submission
+Route::get('contact', 'FeedbackController@index');
+Route::post('contact', 'FeedbackController@submit');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

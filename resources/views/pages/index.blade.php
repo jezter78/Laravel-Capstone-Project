@@ -25,11 +25,11 @@
             </div>
             <!--End of Short description-->
             <!--Join Us/Register button-->
-            <p><button type="button" onclick="window.location.href = 'registration.php'"
+            <p><button type="button" onclick="window.location.href = '{{ url('registration') }}'"
                     class="btn btn-success btn-lg homebox-btn">Join Us</button></p>
 
             <!--Log In button-->
-            <p><button type="button" onclick="window.location.href = 'login.php'"
+            <p><button type="button" onclick="window.location.href = '{{ url('login') }}'"
                     class="btn btn-primary btn-lg homebox-btn">Log In</button></p>
         </div>
     </div>

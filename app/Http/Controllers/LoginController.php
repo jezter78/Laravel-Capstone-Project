@@ -14,8 +14,12 @@ class LoginController extends Controller {
 	 */
 	public function index()
 	{
-		//
+            return view('auth/login');
 	}
+        
+        public function login(){
+            echo "login";
+        }
 
 	/**
 	 * Show the form for creating a new resource.
@@ -24,7 +28,7 @@ class LoginController extends Controller {
 	 */
 	public function create()
 	{
-		//
+	
 	}
 
 	/**
