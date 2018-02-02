@@ -16,14 +16,26 @@ Route::get('/', 'IndexController@index');
 //Route::get('home', 'HomeController@index');
 
 Route::get('registration', function(){
-    echo 'registration page';
+    return view('auth/registration');
+});
+
+Route::post('registration', function(){
+    echo 'registered';
 });
 
 Route::get('login', function(){
-    echo 'login page';
+    return view('auth/login');
+});
+
+Route::post('login', function(){
+    echo "login";
 });
 
 Route::get('contact', function(){
+    return view('pages/contact');
+});
+
+Route::post('contact', function(){
     echo 'contact page';
 });
 
