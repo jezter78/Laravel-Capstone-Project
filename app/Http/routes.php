@@ -17,7 +17,7 @@ Route::get('/', 'IndexController@index');
 
 //User Registration
 Route::get('registration','RegistrationController@index');
-Route::post('registration','RegistrationController@create');
+Route::post('registration','RegistrationController@store');
 
 //User Login
 Route::get('login','LoginController@index');

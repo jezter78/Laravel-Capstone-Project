@@ -22,7 +22,17 @@ class FeedbackController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create(Request $request)
+	public function create()
+	{
+            //
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store(Request $request)
 	{
             $feedback = new Feedback();
             
@@ -33,16 +43,6 @@ class FeedbackController extends Controller {
             $feedback->save();
             
             return redirect('contact')->with('status','success');
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
 	}
 
 	/**
