@@ -27,6 +27,10 @@ Route::post('login', 'LoginController@login');
 Route::get('contact', 'FeedbackController@index');
 Route::post('contact', 'FeedbackController@create');
 
+Route::get('landing',function(){
+    echo 'landing';
+});
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

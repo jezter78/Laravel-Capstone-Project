@@ -2,7 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller {
@@ -24,7 +25,7 @@ class RegistrationController extends Controller {
 	 */
 	public function create()
 	{
-            echo 'registered';
+                //
 	}
 
 	/**
@@ -32,9 +33,22 @@ class RegistrationController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+            $user = new User();
+            $user->user_firstname = $request['firstname'];
+            $user->user_lastname = $request['lastname'];
+            $user->user_gender = $request['gender'];
+            $user->user_email = $request['email'];
+            $user->user_password = Hash::make($request['password']);
+            $user->user_company= $request['company'];
+            $user->user_city = $request['city'];
+            $user->user_country= $request['country'];
+            $user->user_role = 'user';
+            
+            $user->save();
+            
+            return redirect('registration');
 	}
 
 	/**
