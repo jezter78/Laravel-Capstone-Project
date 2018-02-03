@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Feedback;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller {
@@ -17,17 +17,22 @@ class FeedbackController extends Controller {
             return view('pages/contact');
 	}
 
-        public function submit(){
-            echo 'contact page';
-        }
 	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create(Request $request)
 	{
-		//
+            $feedback = new Feedback();
+            
+            $feedback->feedback_firstname = $request['firstname'];
+            $feedback->feedback_lastname = $request['lastname'];
+            $feedback->feedback_email = $request['email'];
+            $feedback->feedback_comment = $request['comment'];
+            $feedback->save();
+            
+            return redirect('contact')->with('status','success');
 	}
 
 	/**

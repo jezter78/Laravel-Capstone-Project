@@ -25,7 +25,7 @@ Route::post('login', 'LoginController@login');
 
 //Feedback submission
 Route::get('contact', 'FeedbackController@index');
-Route::post('contact', 'FeedbackController@submit');
+Route::post('contact', 'FeedbackController@create');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

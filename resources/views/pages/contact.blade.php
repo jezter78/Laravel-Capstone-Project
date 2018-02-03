@@ -17,12 +17,12 @@
                 <input type='hidden' name='_token' value="{{ csrf_token() }}">
                 <div class="col-sm-6 col-sm-offset-1 form-base">
                     <h2 class="page-header">Feedback Form</h2>
-                    <?php if(isset($_GET['success'])): ?>
+                    @if(session('status'))
                     <div class="alert alert-success alert-dismissable">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <strong>Success!</strong> Thank you! Your Feedback has been submitted!
                     </div>
-                    <?php endif; ?> 
+                    @endif
                     <div class="form-group">
                         <label for="lastname">Last Name (required):</label> 
                         <input type="text" id="lastname" class="form-control" id="lastname" 
