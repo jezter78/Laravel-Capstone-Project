@@ -35,6 +35,7 @@ class RegistrationController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+            //need validation
             $user = new User();
             $user->user_firstname = $request['firstname'];
             $user->user_lastname = $request['lastname'];
@@ -44,6 +45,7 @@ class RegistrationController extends Controller {
             $user->user_company= $request['company'];
             $user->user_city = $request['city'];
             $user->user_country= $request['country'];
+            $user->user_status= 'active';
             $user->user_role = 'user';
             
             $user->save();

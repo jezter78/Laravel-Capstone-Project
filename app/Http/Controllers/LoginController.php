@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller {
@@ -17,8 +18,19 @@ class LoginController extends Controller {
             return view('auth/login');
 	}
         
-        public function login(){
-            echo "login";
+        /**
+         * Handle an authentication attempt.
+         *
+         * @return Response
+         */
+        public function authenticate(Request $request)
+        {
+            //need validation
+            if (Auth::attempt(['user_email' => $request['email'], 
+                'password' => $request['password'], 'user_status' => 'active'])) {
+                // Authentication passed...
+                return redirect('landing');
+            }
         }
 
 	/**

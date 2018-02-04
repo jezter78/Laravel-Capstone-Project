@@ -21,7 +21,7 @@ Route::post('registration','RegistrationController@store');
 
 //User Login
 Route::get('login','LoginController@index');
-Route::post('login', 'LoginController@login');
+Route::post('login', 'LoginController@authenticate');
 
 //Feedback submission
 Route::get('contact', 'FeedbackController@index');
@@ -29,7 +29,7 @@ Route::post('contact', 'FeedbackController@create');
 
 Route::get('landing',function(){
     echo 'landing';
-});
+})->middleware('auth');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
