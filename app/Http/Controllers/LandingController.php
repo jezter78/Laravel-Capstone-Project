@@ -15,8 +15,8 @@ class LandingController extends Controller {
 	public function index()
 	{
             return view('pages.landing',[
-                'firstname' => AUTH::user()->user_firstname,
-                'lastname' => AUTH::user()->user_lastname,]);
+                'firstname' => Auth::user()->user_firstname,
+                'lastname' => Auth::user()->user_lastname,]);
 	}
 
 	/**

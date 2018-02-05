@@ -27,7 +27,7 @@ Route::post('auth/login', 'LoginController@authenticate');
 Route::get('contact', 'FeedbackController@index');
 Route::post('contact', 'FeedbackController@create');
 
-
+//routes that only users can access
 Route::group(['middleware' => ['auth']], function () {
     Route::get('landing','LandingController@index');
     
@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth']], function () {
         return redirect('/');
     });
 });
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
