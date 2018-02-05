@@ -29,9 +29,7 @@ Route::post('contact', 'FeedbackController@create');
 
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('landing',function(){
-        echo 'landing';
-    });
+    Route::get('landing','LandingController@index');
     
     Route::get('auth/logout',function(){
         Auth::logout();
