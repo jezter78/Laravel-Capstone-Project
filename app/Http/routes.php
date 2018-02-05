@@ -27,9 +27,14 @@ Route::post('login', 'LoginController@authenticate');
 Route::get('contact', 'FeedbackController@index');
 Route::post('contact', 'FeedbackController@create');
 
-Route::get('landing',function(){
+Route::get('landing',['middleware' => 'auth',function(){
     echo 'landing';
-})->middleware('auth');
+}]);
+
+Route::get('logout',['middleware' => 'auth',function(){
+    Auth::logout();
+    return redirect('/');
+}]);
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
