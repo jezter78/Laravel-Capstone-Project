@@ -14,7 +14,7 @@
                                 class="glyphicon glyphicon-home"></span>HOME</a></li>
                 <li><a href="{{url('registration')}}"><span
                                 class="glyphicon glyphicon-user"></span>REGISTRATION</a></li>
-                <li><a href="{{url('login')}}"><span
+                <li><a href="{{url('auth/login')}}"><span
                                 class="glyphicon glyphicon-log-in"></span>LOGIN</a></li>
                 <li><a href="{{url('contact')}}"><span
                                 class="glyphicon glyphicon-map-marker"></span>CONTACT</a></li>

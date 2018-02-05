@@ -20,22 +20,24 @@ Route::get('registration','RegistrationController@index');
 Route::post('registration','RegistrationController@store');
 
 //User Login
-Route::get('login','LoginController@index');
-Route::post('login', 'LoginController@authenticate');
+Route::get('auth/login','LoginController@index');
+Route::post('auth/login', 'LoginController@authenticate');
 
 //Feedback submission
 Route::get('contact', 'FeedbackController@index');
 Route::post('contact', 'FeedbackController@create');
 
-Route::get('landing',['middleware' => 'auth',function(){
-    echo 'landing';
-}]);
 
-Route::get('logout',['middleware' => 'auth',function(){
-    Auth::logout();
-    return redirect('/');
-}]);
-
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('landing',function(){
+        echo 'landing';
+    });
+    
+    Route::get('auth/logout',function(){
+        Auth::logout();
+        return redirect('/');
+    });
+});
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
