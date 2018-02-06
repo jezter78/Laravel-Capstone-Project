@@ -46,9 +46,11 @@ class ProfileViewController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id=null)
 	{
-		//
+            $user = $id==null? null: User::find($id);
+            
+            return view('pages/profileView',compact('user'));
 	}
 
 	/**

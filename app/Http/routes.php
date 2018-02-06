@@ -33,8 +33,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('landing','LandingController@index');
     //list user profiles and search for user profiles
     Route::get('list','ListController@index');
-    //view user profile page
+    //view user self profile page
     Route::get('viewProfile','ProfileViewController@index');
+    //view others profile page
+    Route:get('viewOthers/{id?}','ProfileViewController@show');
     //user logout
     Route::get('auth/logout',function(){
         Auth::logout();

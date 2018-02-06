@@ -69,7 +69,7 @@
                             <td>{{ $user->user_country }}</td>
                             <td>{{ $user->user_city }}</td>
                             <td>{{ $user->created_at }}</td>
-                            <td><a href='viewProfile.php?id={{ $user->user_id }}'><span class='glyphicon glyphicon-eye-open'></span></a></td>                          
+                            <td><a href="{{ url('viewOthers/'.$user->user_id) }}"><span class='glyphicon glyphicon-eye-open'></span></a></td>                          
                         </tr>                
                         @endforeach
                         
