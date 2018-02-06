@@ -22,7 +22,7 @@
                     <li><a href="passwordReset.php">Password Change</a></li>
                 </ul>
                     </li>
-                    <li><a href="listing.php"><span
+                    <li><a href="{{ url('list') }}"><span
                         class="glyphicon glyphicon-search"></span>USER</a></li>
                     <li><a href="{{ url('contact') }}"><span
                         class="glyphicon glyphicon-map-marker"></span>CONTACT</a></li>                                

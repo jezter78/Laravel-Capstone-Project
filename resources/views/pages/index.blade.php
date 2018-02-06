@@ -29,7 +29,7 @@
                     class="btn btn-success btn-lg homebox-btn">Join Us</button></p>
 
             <!--Log In button-->
-            <p><button type="button" onclick="window.location.href = '{{ url('login') }}'"
+            <p><button type="button" onclick="window.location.href = '{{ url('auth/login') }}'"
                     class="btn btn-primary btn-lg homebox-btn">Log In</button></p>
         </div>
     </div>
