@@ -29,10 +29,13 @@ Route::post('contact', 'FeedbackController@create');
 
 //routes that only users can access
 Route::group(['middleware' => ['auth']], function () {
+    //main landing page
     Route::get('landing','LandingController@index');
-    
+    //list user profiles and search for user profiles
     Route::get('list','ListController@index');
-    
+    //view user profile page
+    Route::get('viewProfile','ProfileViewController@index');
+    //user logout
     Route::get('auth/logout',function(){
         Auth::logout();
         return redirect('/');
