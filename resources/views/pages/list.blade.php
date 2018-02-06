@@ -65,6 +65,8 @@
                         ?>
                     </tbody>
                 </table>
+            @else
+                <p>User Data not found!</p>
             @endif
         </div>
     </div>
