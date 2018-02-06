@@ -36,10 +36,10 @@ class FeedbackController extends Controller {
 	{
             $feedback = new Feedback();
             
-            $feedback->feedback_firstname = $request['firstname'];
-            $feedback->feedback_lastname = $request['lastname'];
-            $feedback->feedback_email = $request['email'];
-            $feedback->feedback_comment = $request['comment'];
+            $feedback->feedback_firstname = $request->input('firstname');
+            $feedback->feedback_lastname = $request->input('lastname');
+            $feedback->feedback_email = $request->input('email');
+            $feedback->feedback_comment = $request->input('comment');
             $feedback->save();
             
             return redirect('contact')->with('status','success');

@@ -16,76 +16,12 @@ class ListController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-            $users = User::where('user_lastname','LIKE','%'.$request['lastname'].'%')
-                    ->where('user_firstname','LIKE','%'.$request['firstname'].'%')
-                    ->where('user_country','LIKE','%'.$request['country'].'%')
-                    ->where('user_city','LIKE','%'.$request['city'].'%')
+            $users = User::where('user_lastname','LIKE','%'.$request->input('lastname').'%')
+                    ->where('user_firstname','LIKE','%'.$request->input('firstname').'%')
+                    ->where('user_country','LIKE','%'.$request->input('country').'%')
+                    ->where('user_city','LIKE','%'.$request->input('city').'%')
                     ->get();
             return view('pages.list',compact('users'));
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
 	}
 
 }

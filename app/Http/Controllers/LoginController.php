@@ -27,7 +27,7 @@ class LoginController extends Controller {
         {
             //need validation
             if (Auth::attempt(['user_email' => $request['email'], 
-                'password' => $request['password'], 'user_status' => 'active'])) {
+                'password' => $request->input('password'), 'user_status' => 'active'])) {
                 // Authentication passed...
                 return redirect('landing');
             }
