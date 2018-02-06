@@ -14,9 +14,14 @@ class ListController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
-            return view('pages.list',['users'=>User::all()]);
+            $users = User::where('user_lastname','LIKE','%'.$request['lastname'].'%')
+                    ->where('user_firstname','LIKE','%'.$request['firstname'].'%')
+                    ->where('user_country','LIKE','%'.$request['country'].'%')
+                    ->where('user_city','LIKE','%'.$request['city'].'%')
+                    ->get();
+            return view('pages.list',compact('users'));
 	}
 
 	/**

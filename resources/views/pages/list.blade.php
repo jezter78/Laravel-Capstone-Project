@@ -3,6 +3,36 @@
 @section('title', 'User Profiles')
 
 @section('content')
+<!--Search Form-->
+<form class="form-inline well search-style" method="get">
+    <div class="row">
+        <div class="col-md-12">
+            <!--Form content-->
+            <div class="form-group col-md-2">
+                <input name="lastname" type="text" class="form-control col-md-2" id="lastname" placeholder="Last Name">
+            </div>
+            <div class="form-group col-md-2">
+                <input name="firstname" type="text" class="form-control" id="firstname" placeholder="First Name">
+            </div>            
+            <div class="form-group col-md-2">
+                <input name="company" type="text" class="form-control" id="company" placeholder="Company">
+            </div>
+            <div class="form-group col-md-2">
+                <input name="country" type="text" class="form-control" id="country" placeholder="Country">
+            </div>
+            <div class="form-group col-md-2">
+                <input name="city" type="text" class="form-control" id="City" placeholder="City">
+            </div>
+            <div class="text-center col-md-2">
+                <button name="searched" type="submit" id="submit" class="btn btn-warning search-style-btn">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+<!--End of Search Form-->
+
 <!--table to list all user-->
 <div class="well table-wrapper table-responsive">
     <div class="row">
@@ -43,8 +73,7 @@
                         </tr>                
                         @endforeach
                         
-                        <?php 
-
+                        <?php
                             //if the user is admin, show the operation buttons
                             /*
                             if($isAdmin){
@@ -60,8 +89,7 @@
                                     echo "href='delete.php?id={$user->user_id}'";
                                 }                                   
                                 echo ">Delete</a></td>";
-                            }*/
-                            
+                            }*/                           
                         ?>
                     </tbody>
                 </table>
