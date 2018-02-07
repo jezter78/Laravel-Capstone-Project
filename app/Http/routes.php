@@ -37,6 +37,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('viewProfile','ProfileViewController@index');
     //view others profile page
     Route:get('viewOthers/{id?}','ProfileViewController@show');
+    //view self profile edit form
+    Route::get('editProfile','ProfileEditController@index');
+    //edit self profile
+    Route::put('editProfile','ProfileEditController@updateSelf');
     //user logout
     Route::get('auth/logout',function(){
         Auth::logout();

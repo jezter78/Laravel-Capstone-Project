@@ -18,7 +18,7 @@
                     class="glyphicon glyphicon-user"></span>PROFILE <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ url('viewProfile') }}">Profile View</a></li>
-                    <li><a href="edit.php">Profile Edit</a></li>
+                    <li><a href="{{ url('editProfile') }}">Profile Edit</a></li>
                     <li><a href="passwordReset.php">Password Change</a></li>
                 </ul>
                     </li>
