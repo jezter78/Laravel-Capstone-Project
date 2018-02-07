@@ -27,14 +27,14 @@ class RegistrationController extends Controller {
 	{
             //need validation
             $user = new User();
-            $user->user_firstname = $request['firstname'];
-            $user->user_lastname = $request['lastname'];
-            $user->user_gender = $request['gender'];
-            $user->user_email = $request['email'];
-            $user->user_password = Hash::make($request['password']);
-            $user->user_company= $request['company'];
-            $user->user_city = $request['city'];
-            $user->user_country= $request['country'];
+            $user->user_firstname = $request->input('firstname');
+            $user->user_lastname = $request->input('lastname');
+            $user->user_gender = $request->input('gender');
+            $user->user_email = $request->input('email');
+            $user->user_password = Hash::make($request->input('password'));
+            $user->user_company= $request->input('company');
+            $user->user_city = $request->input('city');
+            $user->user_country= $request->input('country');
             $user->user_status= 'active';
             $user->user_role = 'user';
             
