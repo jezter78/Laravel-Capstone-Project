@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'IndexController@index');
-
+Route::get('thankyou',function(){
+    return view('pages.registrationSuccess');
+});
 //Route::get('home', 'HomeController@index');
 
 //User Registration
@@ -31,16 +33,22 @@ Route::post('contact', 'FeedbackController@create');
 Route::group(['middleware' => ['auth']], function () {
     //main landing page
     Route::get('landing','LandingController@index');
+    
     //list user profiles and search for user profiles
     Route::get('list','ListController@index');
     //view user self profile page
     Route::get('viewProfile','ProfileViewController@index');
     //view others profile page
-    Route:get('viewOthers/{id?}','ProfileViewController@show');
-    //view self profile edit form
+    Route::get('viewOthers/{id?}','ProfileViewController@show');
+    
+    //view and update self profile
     Route::get('editProfile','ProfileEditController@index');
-    //edit self profile
     Route::put('editProfile','ProfileEditController@updateSelf');
+    
+    //change password
+    Route::get('changePassword','PasswordChangeController@Index');
+    Route::put('changePassword','PasswordChangeController@update');
+    
     //user logout
     Route::get('auth/logout',function(){
         Auth::logout();
