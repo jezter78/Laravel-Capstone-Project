@@ -56,6 +56,10 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
+//edit others profile page
+Route::get('editOthers/{id}',['middleware' => ['auth','admin'],'uses' => 'ProfileEditController@show']);
+Route::put('editOthers/{id}',['middleware' => ['auth','admin'],'uses' => 'ProfileEditController@update']);
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

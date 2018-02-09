@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+use App\User;
+
 class ProfileEditController extends Controller {
 
 	/**
@@ -30,5 +32,14 @@ class ProfileEditController extends Controller {
             $user -> save();
             
             return redirect('editProfile')->with('status','Update Successful');
+        }
+        
+        public function show($id){
+            $user = User::find($id);
+            return view('pages/editProfile',compact('user'));
+        }
+        
+        public function update($id){
+            echo "hello";
         }
 }

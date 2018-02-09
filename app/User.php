@@ -31,6 +31,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['user_password', 'remember_token'];
         
+        public function isAdmin(){
+            return ($this->role == 'admin' || $this->role == 'super') ? true : false;
+            return true;
+        }
+        
+        public function isSuper(){
+            return ($this->role == 'super') ? true : false;
+        }
         /**
         * Get the password for the user.
         *

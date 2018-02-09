@@ -68,6 +68,27 @@
                    placeholder="e.g. abc@abc.com" value="{{ $user->email }}" maxlength="50">
             <div id="errEmail" class="errDisplay"></div>
         </div>
+        @if(Request::is('editOthers/*'))
+            @if(Auth::user()->isAdmin())
+            <div class="form-group">
+                <label name="status" for="status">Status:</label>
+                <select class="form-control" name="status" id="status">
+                    <option {{ $user->status == 'active' ? "selected = 'selected'":""}} value="active">Active</option>
+                    <option {{ $user->status == 'block' ? "selected = 'selected'":""}} value="block">Block</option>           
+                </select>
+            </div>
+            @endif
+            @if(Auth::user()->isSuper())
+            <div class="form-group">
+                <label name="role" for="role">Role:</label>
+                <select class="form-control" name="role" id="role">
+                    <option {{ $user->role == 'user' ? "selected = 'selected'":""}} value="user">User</option>
+                    <option {{ $user->role == 'admin' ? "selected = 'selected'":""}} value="admin">Admin</option>
+                    <option {{ $user->role == 'super' ? "selected = 'selected'":""}} value="super">Super</option>
+                </select>
+            </div>
+            @endif
+        @endif
         <!--End of Common display items-->
         <!--Update and cancel buttons-->
         <div class="row">

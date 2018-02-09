@@ -54,14 +54,12 @@
                             <th>City</th>                           
                             <th>Date/Time Join</th>
                             <th>View</th>
-                            <?php 
-                                //if user is admin, show opertations
-                                //if($isAdmin){
-                                   // echo '<th>Status</th>';
-                                    //echo '<th>Role</th>';
-                                    ///echo '<th>Edit</th><th>Delete</th>';                                   
-                                //}
-                            ?>                            
+                            @if(Auth::user()->role == 'admin' || Auth::user()->role == 'super')
+                                <th>Status</th>
+                                <th>Role</th>
+                                <th>Edit</th>
+                                <th>Delete</th>                                  
+                            @endif       
                         </tr>
                     </thead>
                     <tbody>
@@ -75,7 +73,14 @@
                             <td>{{ $user->city }}</td>
                             <td>{{ $user->created_at }}</td>
                             <td><a href="{{ url('viewOthers/'.$user->id) }}"><span class='glyphicon glyphicon-eye-open'></span></a></td>                          
-                        </tr>                
+                        
+                        @if(Auth::user()->role == 'admin' || Auth::user()->role == 'super')
+                            <td>{{$user->status}}</td>
+                            <td>{{$user->role}}</td>
+                            <td><a class='btn btn-warning btn-op' href='{{ url("editOthers/".$user->id) }}'>Edit</a></td>
+                            <td><a class='btn btn-warning btn-op' href='delete.php'>Delete</a></td>
+                        @endif
+                        </tr>
                         @endforeach
                         
                         <?php
