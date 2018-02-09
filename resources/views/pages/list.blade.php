@@ -3,6 +3,13 @@
 @section('title', 'User Profiles')
 
 @section('content')
+<!--Display success on listing page if delete is successful on delete page-->
+@if(Session::has('status'))
+<div class="alert alert-success alert-dismissable">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Success!</strong> {{ Session::get('status') }}
+</div>
+@endif
 <!--Search Form-->
 <form class="form-inline well search-style" method="get">
     <div class="row">
@@ -78,29 +85,10 @@
                             <td>{{$user->status}}</td>
                             <td>{{$user->role}}</td>
                             <td><a class='btn btn-warning btn-op' href='{{ url("editOthers/".$user->id) }}'>Edit</a></td>
-                            <td><a class='btn btn-warning btn-op' href='delete.php'>Delete</a></td>
+                            <td><a class='btn btn-warning btn-op' href='{{ url("delete/".$user->id) }}'>Delete</a></td>
                         @endif
                         </tr>
                         @endforeach
-                        
-                        <?php
-                            //if the user is admin, show the operation buttons
-                            /*
-                            if($isAdmin){
-                                echo "<td>{$user->user_status}</td>";
-                                echo "<td>{$user->user_role}</td>";
-                                echo "<td><a class='btn btn-warning btn-op' href='edit.php?id={$user->user_id}'>Edit</a>";
-                                echo "<td><a class='btn btn-danger btn-op' ";
-
-                                //if result is ownself, disable the delete button
-                                if($user->user_id == $_SESSION['id']){
-                                    echo"disabled data-toggle='tooltip' title='Unable to delete ownself!'";
-                                } else {
-                                    echo "href='delete.php?id={$user->user_id}'";
-                                }                                   
-                                echo ">Delete</a></td>";
-                            }*/                           
-                        ?>
                     </tbody>
                 </table>
             @else

@@ -31,7 +31,7 @@ class LoginController extends Controller {
                 // Authentication passed...
                 return redirect('landing');
             } else {
-                return redirect('auth/login')->with('status','Email or password Incorrect');
+                return redirect('auth/login')->with('error','Incorrect Password or Email');
             }
         }
 }
