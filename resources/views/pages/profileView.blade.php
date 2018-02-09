@@ -6,7 +6,7 @@
 <div class="well well-lg viewProfile-wrapper">
 @if($user)
     <!--profile content-->
-    <h2>Profile of <span class="viewProfile-header-name">{{ $user->user_firstname }} {{ $user->user_lastname }}</span></h2>
+    <h2>Profile of <span class="viewProfile-header-name">{{ $user->lastname }} {{ $user->firstname }}</span></h2>
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <table class="table table-bordered table-wrapper">
@@ -14,27 +14,27 @@
                     <tr>
                         <td class="viewProfile-label"><span 
                                 class="glyphicon glyphicon-briefcase"></span> Company</td>
-                        <td>{{ $user->user_company }}</td>
+                        <td>{{ $user->company }}</td>
                     </tr>
                     <tr>
                         <td class="viewProfile-label"><span 
                                 class="glyphicon glyphicon-envelope"></span> Email</td>
-                        <td>{{ $user->user_email }}</td>
+                        <td>{{ $user->email }}</td>
                     </tr> 
                     <tr>
                         <td class="viewProfile-label"><span 
                                 class="glyphicon glyphicon-user"></span> Gender</td>
-                        <td>{{ $user->user_gender }}</td>
+                        <td>{{ $user->gender }}</td>
                     </tr>                    
                     <tr>
                         <td class="viewProfile-label"><span 
                                 class="glyphicon glyphicon-plane"></span> Country</td>
-                        <td>{{ $user->user_country }}</td>
+                        <td>{{ $user->country }}</td>
                     </tr>
                     <tr>
                         <td class="viewProfile-label"><span 
                                 class="glyphicon glyphicon-road"></span> City</td>
-                        <td>{{ $user->user_city }}</td>
+                        <td>{{ $user->city }}</td>
                     </tr>            
                 <tbody>
             </table>

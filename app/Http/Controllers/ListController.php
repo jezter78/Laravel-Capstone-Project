@@ -16,10 +16,10 @@ class ListController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-            $users = User::where('user_lastname','LIKE','%'.$request->input('lastname').'%')
-                    ->where('user_firstname','LIKE','%'.$request->input('firstname').'%')
-                    ->where('user_country','LIKE','%'.$request->input('country').'%')
-                    ->where('user_city','LIKE','%'.$request->input('city').'%')
+            $users = User::where('lastname','LIKE','%'.$request->input('lastname').'%')
+                    ->where('firstname','LIKE','%'.$request->input('firstname').'%')
+                    ->where('country','LIKE','%'.$request->input('country').'%')
+                    ->where('city','LIKE','%'.$request->input('city').'%')
                     ->get();
             return view('pages.list',compact('users'));
 	}

@@ -29,57 +29,62 @@ class UserTableSeeder extends Seeder {
         DB::table('users')->delete();
 
         User::create([
-            'firstname' => 'John',
-            'lastname' => 'Doe',
+            'lastname' => 'John',
+            'firstname' => 'Doe',
             'gender' => 'Male',
             'email' => 'john@abc.com',
             'password' => Hash::make('Password01'),
             'city' => 'Singapore',
             'country' => 'Singapore',
+            'company' => 'abc pte ltd',
             'role' => 'super',
             'status' => 'active'            
             ]);
         User::create([
-            'firstname' => 'Jane',
-            'lastname' => 'Doe',
+            'lastname' => 'Jane',
+            'firstname' => 'Doe',
             'gender' => 'Female',
             'email' => 'jane@abc.com',
             'password' => Hash::make('Password01'),
             'city' => 'Singapore',
             'country' => 'Singapore',
+            'company' => 'abc pte ltd',
             'role' => 'admin',
             'status' => 'active'            
             ]);
         User::create([
-            'firstname' => 'Susan',
-            'lastname' => 'Doe',
+            'lastname' => 'Susan',
+            'firstname' => 'Doe',
             'gender' => 'Female',
             'email' => 'susan@abc.com',
             'password' => Hash::make('Password01'),
             'city' => 'Singapore',
             'country' => 'Singapore',
+            'company' => 'abc pte ltd',
             'role' => 'admin',
             'status' => 'active'            
             ]);
         User::create([
-            'firstname' => 'Scarlet',
-            'lastname' => 'Tan',
+            'lastname' => 'Scarlet',
+            'firstname' => 'Tan',
             'gender' => 'Female',
             'email' => 'scarlet@abc.com',
             'password' => Hash::make('Password01'),
             'city' => 'Singapore',
             'country' => 'Singapore',
+            'company' => 'abc pte ltd',
             'role' => 'user',
             'status' => 'active'            
             ]);
         User::create([
-            'firstname' => 'James',
-            'lastname' => 'Lim',
+            'lastname' => 'James',
+            'firstname' => 'Lim',
             'gender' => 'Male',
             'email' => 'James@abc.com',
             'password' => Hash::make('Password01'),
             'city' => 'Singapore',
             'country' => 'Singapore',
+            'company' => 'abc pte ltd',
             'role' => 'user',
             'status' => 'active'            
             ]);        

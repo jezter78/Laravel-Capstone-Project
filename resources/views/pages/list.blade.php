@@ -67,14 +67,14 @@
                     <tbody>
                         @foreach ($users as $user)
                         <tr>
-                            <td>{{ $user->user_lastname }}</td>
-                            <td>{{ $user->user_firstname }}</td>
-                            <td>{{ $user->user_gender}}</td>
-                            <td>{{ $user->user_company }}</td>
-                            <td>{{ $user->user_country }}</td>
-                            <td>{{ $user->user_city }}</td>
+                            <td>{{ $user->lastname }}</td>
+                            <td>{{ $user->firstname }}</td>
+                            <td>{{ $user->gender}}</td>
+                            <td>{{ $user->company }}</td>
+                            <td>{{ $user->country }}</td>
+                            <td>{{ $user->city }}</td>
                             <td>{{ $user->created_at }}</td>
-                            <td><a href="{{ url('viewOthers/'.$user->user_id) }}"><span class='glyphicon glyphicon-eye-open'></span></a></td>                          
+                            <td><a href="{{ url('viewOthers/'.$user->id) }}"><span class='glyphicon glyphicon-eye-open'></span></a></td>                          
                         </tr>                
                         @endforeach
                         

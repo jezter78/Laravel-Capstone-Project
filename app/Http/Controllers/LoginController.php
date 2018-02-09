@@ -26,10 +26,12 @@ class LoginController extends Controller {
         public function authenticate(Request $request)
         {
             //need validation
-            if (Auth::attempt(['user_email' => $request['email'], 
-                'password' => $request->input('password'), 'user_status' => 'active'])) {
+            if (Auth::attempt(['email' => $request['email'], 
+                'password' => $request->input('password'), 'status' => 'active'])) {
                 // Authentication passed...
                 return redirect('landing');
+            } else {
+                return redirect('auth/login')->with('status','Email or password Incorrect');
             }
         }
 }

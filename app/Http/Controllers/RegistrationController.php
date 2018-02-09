@@ -1,10 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Request;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+
+use Validator;
 
 class RegistrationController extends Controller {
 
@@ -25,11 +27,11 @@ class RegistrationController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-            $validator = $this->validate($request, [
+            $validator = Validator::make($request->all(), [
                 'firstname' => 'required',
                 'lastname' => 'required',
                 'gender' => 'required',
-                'email' => 'required|unique:users,user_email',
+                'email' => 'required|unique:users',
                 'password' => 'required',
                 'company' => 'required',
                 'country' => 'required',
