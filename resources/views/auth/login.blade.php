@@ -32,7 +32,7 @@
                 <Input type="submit" name="submit" value="Log In" class="btn btn-primary btn-login">
             </div>
             <div class="text-center">
-                <a href="passwordForget.php">Forget Your Password? Click here.</a>
+                <a href="{{ url('forgetPassword')}}">Forget Your Password? Click here.</a>
             </div>
             <div class="text-center">
                 <a href="{{ url('registration') }}">Not a registered user? Click here.</a>

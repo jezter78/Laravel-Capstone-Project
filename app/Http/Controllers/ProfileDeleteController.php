@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 
-class DeleteProfileController extends Controller {
+class ProfileDeleteController extends Controller {
 
 	/**
 	 * Display a listing of the resource.

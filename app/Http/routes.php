@@ -15,7 +15,13 @@ Route::get('/', 'IndexController@index');
 Route::get('thankyou',function(){
     return view('pages.registrationSuccess');
 });
-//Route::get('home', 'HomeController@index');
+
+Route::get('forgetPassword','PasswordChangeController@forgetIndex');
+Route::post('forgetPassword','PasswordChangeController@forgetPasswordChange');
+
+Route::get('passwordConfirm',function(){
+    return view('pages.forgetPasswordConfirmed');
+});
 
 //User Registration
 Route::get('registration','RegistrationController@index');
@@ -56,12 +62,13 @@ Route::group(['middleware' => ['auth']], function () {
     });
 });
 
+//admin pages
 //edit others profile page
 Route::get('editOthers/{id}',['middleware' => ['auth','admin'],'uses' => 'ProfileEditController@show']);
 Route::put('editOthers/{id}',['middleware' => ['auth','admin'],'uses' => 'ProfileEditController@update']);
 //delete users
-Route::get('delete/{id}',['middleware' => ['auth','admin'],'uses' => 'DeleteProfileController@show']);
-Route::delete('delete/{id}',['middleware' => ['auth','admin'],'uses' => 'DeleteProfileController@destroy']);
+Route::get('delete/{id}',['middleware' => ['auth','admin'],'uses' => 'ProfileDeleteController@show']);
+Route::delete('delete/{id}',['middleware' => ['auth','admin'],'uses' => 'ProfileDeleteController@destroy']);
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

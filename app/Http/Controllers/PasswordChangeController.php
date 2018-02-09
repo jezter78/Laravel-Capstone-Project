@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+use App\User;
+
 class PasswordChangeController extends Controller {
 
 	/**
@@ -32,4 +34,17 @@ class PasswordChangeController extends Controller {
             
             return redirect('changePassword')->with('status','Password Changed!');
 	}
+        
+        public function forgetIndex(){
+            return view('pages.forgetPassword');
+        }
+        
+        public function forgetPasswordChange(Request $request){
+            if(User::where('email',"=", $request->email)->first()){
+                //email password
+                return redirect('passwordConfirm');
+            } else {
+                return redirect('forgetPassword')->with('error', 'User is not registered' );
+            }
+        }
 }
